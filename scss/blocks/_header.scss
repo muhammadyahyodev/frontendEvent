@@ -1,198 +1,233 @@
 header {
-    width: 100%;
-    background-color: green;
-    font-family: sans-serif;
-
-    .nav {
-        @include navlist(100%, space-between, center, 70px);
-
-        &__logo {
-            font-size: 28px;
-            text-decoration: none;
-            color: #fff;
-        }
-
-        &__menu {
-            color: #fff;
-            font-size: 32px;
-            display: none;
-        }
-
-        &__list {
-            @extend %list;
-            @include navlist(35%, space-between, center, auto);
-            padding: 26px;
-            text-transform: uppercase;
-            transition: all 0.5s ease;
-
-            &--item {
-
-                &-link {
-                    @extend %link;
-                    color: #fff;
-
-                    &:hover {
-                        color: rgb(93, 81, 81);
-                    }
-                }
-            }
-        }
+  width: 100%;
+  height: 80px;
+  background: rgba(23, 25, 29, 0.1);
+  backdrop-filter: blur(3px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 1rem 0;
+  transition: 0.2s;
+  &.scrolled {
+    background: rgba(23, 25, 29, 0.3);
+  }
+  nav {
+    .logo {
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 50px;
+      color: $text-black;
+      display: inline-block;
     }
+    .menu-bar {
+      display: none;
+    }
+    .mobile-night-mode {
+      display: none;
+    }
+    .wrapper {
+      width: 100%;
+      .menu {
+        margin-right: auto;
+        margin-left: 100px;
+        li {
+          margin-right: 1rem;
+          a {
+            font-weight: 600;
+            font-size: 20px;
+            transition: 0.2s;
+            color: $text-black;
+            &:hover {
+              color: $text-color;
+            }
+          }
+        }
+      }
+      .nav-services {
+        .night-mode {
+          background-color: white;
+          padding: 2px;
+          width: 83px;
+          height: 40px;
+          border-radius: 30px;
+          div {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: white;
+            cursor: pointer;
+            i {
+              color: $text-black;
+              font-size: 1.5rem;
+            }
+            &.active {
+              background-color: $text-color;
+              i {
+                color: white;
+              }
+            }
+          }
+        }
+        .contact {
+          margin-left: 40px;
+          margin-right: 31px;
+          h3,
+          p {
+            font-weight: 600;
+          }
+          h3 {
+            margin-bottom: 3px;
+          }
+        }
+        button {
+          background-color: $text-color;
+          color: white;
+          padding: 12px 21px;
+          border-radius: 7px;
+          border: 0;
+          outline: 0;
+          font-weight: 600;
+        }
+        button.sm-button {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
-.swipe{
-    transform: translateX(-200%);
+@media only screen and (max-width: 1140px) {
+  header {
+    nav {
+      .wrapper {
+        .menu {
+          li {
+            a {
+              font-size: 18px;
+            }
+          }
+        }
+        .nav-services {
+          .contact {
+            display: none;
+          }
+          button {
+            padding: 10px 16px;
+            border-radius: 6px;
+            margin-left: 1rem;
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
+@media only screen and (max-width: 992px) {
+  header {
+    height: 80px;
+    nav {
+      .menu-bar {
+        display: block;
+      }
+      .mobile-night-mode {
+        display: flex;
+        width: 36px;
+        height: 36px;
+        background-color: $text-color;
+        border-radius: 50%;
+        i {
+          color: white;
+          font-size: 1.5rem;
+        }
+      }
+      .logo {
+        text-transform: uppercase;
+      }
+      .wrapper {
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        background-color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        height: calc(100vh - 80px);
+        justify-content: space-between;
+        transition: 0.3s;
+        &.active {
+          left: 0;
+        }
+        .menu {
+          margin: 0;
+          flex-direction: column;
+          align-items: flex-start;
+          li {
+            margin-right: 0;
+            margin-bottom: 0.5rem;
+            a {
+              font-size: 32px;
+              padding: 0.5rem 1rem;
+              display: block;
+            }
+          }
+        }
+        .nav-services {
+          width: 100%;
+          .night-mode {
+            display: none;
+          }
+          .contact {
+            display: none;
+          }
+          li {
+            display: block;
+            width: 100%;
+            padding: 0 1rem;
+          }
+          button {
+            display: none;
+          }
+          button.sm-button {
+            margin: 0;
+            display: block;
+            width: 100%;
+            padding: 21px 44px;
+            border-radius: 45px;
+            font-size: 32px;
+          }
+        }
+      }
+    }
+  }
+}
 
 @media only screen and (max-width: 768px) {
-
-    header {
-        width: 100%;
-        background-color: rgb(0, 81, 128);
-        font-family: sans-serif;
-
-        .nav {
-            @include navlist(100%, space-between, center, 70px);
-
-            &__logo {
-                font-size: 24px;
-                text-decoration: none;
-                color: #fff;
-            }
-
-            &__menu {
-                color: #fff;
-                font-size: 32px;
-                display: none;
-            }
-
-            &__list {
-                @extend %list;
-                @include navlist(45%, space-between, center, auto);
-                padding: 26px;
-                text-transform: uppercase;
-
-                &--item {
-
-                    &-link {
-                        @extend %link;
-                        color: #fff;
-
-                        &:hover {
-                            color: rgb(93, 81, 81);
-                        }
-                    }
-                }
-            }
-        }
+  header {
+    height: 74px;
+    padding: 1rem;
+    nav {
+      .wrapper {
+        top: 74px;
+      }
     }
-
+  }
 }
-
-
-
-@media only screen and (max-width:428px) {
-
-    header {
-        width: 100%;
-        background-color: rgb(0, 81, 128);
-        font-family: sans-serif;
-
-        .nav {
-            @include navlist(100%, space-between, center, 70px);
-            position: relative;
-            z-index: 9999;
-
-            &__logo {
-                font-size: 24px;
-                text-decoration: none;
-                color: #fff;
-            }
-
-            &__menu {
-                color: #fff;
-                font-size: 32px;
-                display: block;
-            }
-
-            &__list {
-                @include navlist(100%, flex-start, flex-start, auto);
-                text-transform: uppercase;
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                background-color: rgba(0, 0, 0, 0.576);
-                z-index: 222;
-                height: 100vh;
-               
-
-                &--item {
-                    background-color: silver;
-                    width: 100%;
-                    padding: 10px;
-                    margin: 1px;
-                    cursor: pointer;
-
-                    &-link {
-
-                        color: #fff;
-
-                        &:hover {
-                            color: rgb(93, 81, 81);
-                        }
-                    }
-                }
-            }
+@media only screen and (max-width: 384px) {
+  header {
+    nav {
+      .wrapper {
+        .nav-services {
+          button.sm-button {
+            padding: 1rem 2rem;
+            border-radius: 35px;
+            font-size: 28px;
+          }
         }
+      }
     }
-
-}
-
-
-@media only screen and (max-width:375px) {
-
-    header {
-        width: 100%;
-        background-color: rgb(0, 0, 0);
-        font-family: sans-serif;
-
-        .nav {
-            @include navlist(100%, space-between, center, 70px);
-
-            &__logo {
-                font-size: 24px;
-                text-decoration: none;
-                color: #fff;
-            }
-
-            &__menu {
-                color: #fff;
-                font-size: 32px;
-                display: block;
-            }
-
-            &__list {
-
-                @include navlist(45%, space-between, center, auto);
-                padding: 26px;
-                text-transform: uppercase;
-                display: none;
-
-                &--item {
-
-                    &-link {
-
-                        color: #fff;
-
-                        &:hover {
-                            color: rgb(93, 81, 81);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
+  }
 }
