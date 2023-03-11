@@ -13,11 +13,80 @@
       rel="stylesheet"
     />
 
+    <!-- box-icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
     <!-- link to css -->
-    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Frontend event</title>
   </head>
   <body>
+    <!-- HEADER START -->
+    <header>
+      <div class="container">
+        <nav class="flex justify-between items-center">
+          <div class="menu-bar">
+            <img src="./images/icons/menu.png" alt="menu-icon" />
+          </div>
+          <a href="#" class="logo block">Logo</a>
+          <div class="mobile-night-mode items-center justify-center">
+            <i class="bx bx-sun"></i>
+          </div>
+          <div class="wrapper flex items-center">
+            <ul class="menu flex items-center">
+              <li><a href="#">О компании</a></li>
+              <li><a href="#">Портфолио</a></li>
+              <li><a href="#">Услуги</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+            <ul class="nav-services flex items-center">
+              <li class="night-mode flex items-center justify-between">
+                <div class="light active flex items-center justify-center">
+                  <i class="bx bx-sun"></i>
+                </div>
+                <div class="night flex items-center justify-center">
+                  <i class="bx bx-moon"></i>
+                </div>
+              </li>
+              <li class="contact">
+                <h3>+998 90 777-77-77</h3>
+                <p>chotatam@gmail.com</p>
+              </li>
+              <li>
+                <button>Заказать <span>звонок</span></button>
+                <button class="sm-button">(99) 999 9999</button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- HEADER END -->
+
+    <!-- MAIN START -->
+    <main>
+      <section id="intro" class="intro">
+        <div class="container flex">
+          <div class="intro__info">
+            <h1>Biz veb-saytlar, ilovalarni ishlab chiqamiz</h1>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+            <a href="#">Портфолио</a>
+          </div>
+          <div class="intro__img">
+            <img src="./images/into/circle.jpg" alt="intro-img" />
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- FMAINEND -->
+
     <!-- main js file -->
     <script src="./scripts/app.js"></script>
   </body>
