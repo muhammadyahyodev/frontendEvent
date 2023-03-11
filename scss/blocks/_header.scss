@@ -10,7 +10,8 @@ header {
   padding: 1rem 0;
   transition: 0.2s;
   &.scrolled {
-    background: rgba(23, 25, 29, 0.3);
+    background: white;
+    box-shadow: 0 0 10px rgba(23, 25, 29, 0.3);
   }
   nav {
     .logo {
@@ -49,8 +50,9 @@ header {
           background-color: white;
           padding: 2px;
           width: 83px;
-          height: 40px;
+          height: 42px;
           border-radius: 30px;
+          border: 1px solid rgba(23, 25, 29, 0.2);
           div {
             width: 36px;
             height: 36px;
@@ -129,6 +131,11 @@ header {
 @media only screen and (max-width: 992px) {
   header {
     height: 80px;
+    background-color: white;
+    &.scrolled {
+      background: white;
+      box-shadow: 0 0 10px rgba(23, 25, 29, 0.3);
+    }
     nav {
       .menu-bar {
         display: block;
@@ -224,7 +231,7 @@ header {
           button.sm-button {
             padding: 1rem 2rem;
             border-radius: 35px;
-            font-size: 28px;
+            font-size: 22px;
           }
         }
       }

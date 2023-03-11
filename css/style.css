@@ -444,7 +444,8 @@ header {
   transition: 0.2s;
 }
 header.scrolled {
-  background: rgba(23, 25, 29, 0.3);
+  background: white;
+  box-shadow: 0 0 10px rgba(23, 25, 29, 0.3);
 }
 header nav .logo {
   font-size: 30px;
@@ -482,8 +483,9 @@ header nav .wrapper .nav-services .night-mode {
   background-color: white;
   padding: 2px;
   width: 83px;
-  height: 40px;
+  height: 42px;
   border-radius: 30px;
+  border: 1px solid rgba(23, 25, 29, 0.2);
 }
 header nav .wrapper .nav-services .night-mode div {
   width: 36px;
@@ -545,6 +547,11 @@ header nav .wrapper .nav-services button.sm-button {
 @media only screen and (max-width: 992px) {
   header {
     height: 80px;
+    background-color: white;
+  }
+  header.scrolled {
+    background: white;
+    box-shadow: 0 0 10px rgba(23, 25, 29, 0.3);
   }
   header nav .menu-bar {
     display: block;
@@ -631,7 +638,7 @@ header nav .wrapper .nav-services button.sm-button {
   header nav .wrapper .nav-services button.sm-button {
     padding: 1rem 2rem;
     border-radius: 35px;
-    font-size: 28px;
+    font-size: 22px;
   }
 }
 .intro {
@@ -696,10 +703,11 @@ header nav .wrapper .nav-services button.sm-button {
 }
 .intro__img {
   width: 50%;
+  position: relative;
+  z-index: 1;
 }
 .intro__img img {
-  width: 500px;
-  height: 500px;
+  max-width: 500px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -707,6 +715,83 @@ header nav .wrapper .nav-services button.sm-button {
   margin-left: auto;
 }
 
+@media only screen and (max-width: 992px) {
+  .intro {
+    background-size: cover;
+    padding-top: 150px;
+  }
+  .intro .container {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .intro::after {
+    background-image: url("../../images/background/bg-intro-1.png");
+    background-position: top right;
+  }
+  .intro::before {
+    bottom: -10%;
+    background-image: url("../../images/background/bg-intro-2.png");
+    background-position: bottom left;
+    background-size: 70%;
+  }
+  .intro__info {
+    width: 100%;
+  }
+  .intro__info h1 {
+    font-size: 2.5rem;
+    line-height: normal;
+    text-align: center;
+    margin: 0 auto 40px;
+  }
+  .intro__info a {
+    margin-top: 100px;
+  }
+  .intro__img {
+    width: 100%;
+  }
+  .intro__img img {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .intro {
+    background-size: cover;
+    padding-top: 115px;
+    min-height: 100vh;
+    padding-bottom: 2rem;
+  }
+  .intro .container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 0 2.5rem;
+  }
+  .intro::after {
+    display: none;
+  }
+  .intro::before {
+    display: none;
+  }
+  .intro__info h1 {
+    font-size: 2rem;
+    line-height: 35px;
+    text-align: center;
+    margin: 0 auto 25px;
+  }
+  .intro__info a {
+    padding: 15px 20px;
+    text-align: center;
+    background-color: #6911ad;
+    color: white;
+    border-radius: 30px;
+    margin-left: 0;
+    width: 177px;
+    margin: 100px auto 0;
+  }
+  .intro__img img {
+    max-width: 238px;
+  }
+}
 .card {
   width: 300px;
   min-height: 360px;
